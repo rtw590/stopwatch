@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stopwatch</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+
+  <body id="bodyBox">
+    <div id="timerBox"><h1 id="timer">00:00:00</h1></div>
+
+    <div class="buttons">
+      <button id="startStop" onclick="startStop()">Start</button>
+      <button id="reset" onclick="reset()">Reset</button>
+    </div>
+
+    <div class="picker">
+      <br />
+      <h2 id="wordLight">Lightness</h2>
+      <br />
+      <input
+        type="range"
+        min="0"
+        max="100"
+        step="1"
+        id="Lightness"
+        value="53"
+      />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
