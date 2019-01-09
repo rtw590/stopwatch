@@ -18,19 +18,57 @@ let interval = null;
 //Define var to hold stopwatch status
 let status = "stopped";
 
+// Working on changing background color
+
+var bk = document.getElementById("bodyBox");
+
+var input = document.getElementById("Lightness");
+
+var hueStart = "291";
+var saturation = "76%";
+var lightness = "53";
+
+input.addEventListener("input", function() {
+  lightness = document.getElementById("Lightness").value.toString() + "%";
+  bk.style.backgroundColor =
+    "hsl(" + hueStart + ", " + saturation + ", " + lightness + ")";
+  if (parseInt(lightness) > 70) {
+    document.getElementById("startStop").style.color = "black";
+    document.getElementById("reset").style.color = "black";
+    document.getElementById("timer").style.color = "black";
+    document.getElementById("30color").style.color = "black";
+    document.getElementById("1color").style.color = "black";
+    document.getElementById("wordLight").style.color = "black";
+  } else {
+    document.getElementById("startStop").style.color = "white";
+    document.getElementById("reset").style.color = "white";
+    document.getElementById("timer").style.color = "white";
+    document.getElementById("30color").style.color = "white";
+    document.getElementById("1color").style.color = "white";
+    document.getElementById("wordLight").style.color = "white";
+  }
+});
+
 //Stopwatch function (logic to determine when to increment next value, etc.)
 function stopWatch() {
   seconds++;
 
   if (seconds == 30) {
-    audio2.play();
+    if (document.getElementById("30seconds").checked) {
+      audio2.play();
+    }
   }
 
   //Logic to determine when to increment next value
   if (seconds / 60 === 1) {
     seconds = 0;
     minutes++;
-    audio.play();
+    // hueChange = parseInt(hueChange) - 53;
+    // bk.style.backgroundColor =
+    //   "hsl(" + hueChange + ", " + saturation + ", " + lightness + ")";
+    if (document.getElementById("1minute").checked) {
+      audio.play();
+    }
 
     if (minutes / 60 === 1) {
       minutes = 0;
@@ -65,7 +103,7 @@ function stopWatch() {
 function startStop() {
   if (status === "stopped") {
     //Start the stopwatch (by calling the setInterval() function)
-    interval = window.setInterval(stopWatch, 1000);
+    interval = window.setInterval(stopWatch, 100);
     document.getElementById("startStop").innerHTML = "Stop";
     status = "started";
   } else {
