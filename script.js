@@ -1,3 +1,7 @@
+// Bring in audio
+const audio = new Audio("tone.mp3");
+const audio2 = new Audio("tone2.mp3");
+
 //Define vars to hold time values
 let seconds = 0;
 let minutes = 0;
@@ -18,10 +22,15 @@ let status = "stopped";
 function stopWatch() {
   seconds++;
 
+  if (seconds == 30) {
+    audio2.play();
+  }
+
   //Logic to determine when to increment next value
   if (seconds / 60 === 1) {
     seconds = 0;
     minutes++;
+    audio.play();
 
     if (minutes / 60 === 1) {
       minutes = 0;
