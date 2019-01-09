@@ -63,9 +63,6 @@ function stopWatch() {
   if (seconds / 60 === 1) {
     seconds = 0;
     minutes++;
-    // hueChange = parseInt(hueChange) - 53;
-    // bk.style.backgroundColor =
-    //   "hsl(" + hueChange + ", " + saturation + ", " + lightness + ")";
     if (document.getElementById("1minute").checked) {
       audio.play();
     }
