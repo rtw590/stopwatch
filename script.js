@@ -25,13 +25,14 @@ var bk = document.getElementById("bodyBox");
 var input = document.getElementById("Lightness");
 
 var hueStart = "291";
+var hueChange = "291";
 var saturation = "76%";
 var lightness = "53";
 
 input.addEventListener("input", function() {
   lightness = document.getElementById("Lightness").value.toString() + "%";
   bk.style.backgroundColor =
-    "hsl(" + hueStart + ", " + saturation + ", " + lightness + ")";
+    "hsl(" + hueChange + ", " + saturation + ", " + lightness + ")";
   if (parseInt(lightness) > 70) {
     document.getElementById("startStop").style.color = "black";
     document.getElementById("reset").style.color = "black";
@@ -54,6 +55,11 @@ function stopWatch() {
   seconds++;
 
   if (seconds == 30) {
+    lightness = document.getElementById("Lightness").value.toString() + "%";
+    hueChange = parseInt(hueChange) - 53;
+    bk.style.backgroundColor =
+      "hsl(" + hueChange + ", " + saturation + ", " + lightness + ")";
+
     if (document.getElementById("30seconds").checked) {
       audio2.play();
     }
@@ -63,6 +69,10 @@ function stopWatch() {
   if (seconds / 60 === 1) {
     seconds = 0;
     minutes++;
+    lightness = document.getElementById("Lightness").value.toString() + "%";
+    hueChange = parseInt(hueChange) - 53;
+    bk.style.backgroundColor =
+      "hsl(" + hueChange + ", " + saturation + ", " + lightness + ")";
     if (document.getElementById("1minute").checked) {
       audio.play();
     }
