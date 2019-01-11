@@ -34,6 +34,8 @@ input.addEventListener("input", function() {
   bk.style.backgroundColor =
     "hsl(" + hueChange + ", " + saturation + ", " + lightness + ")";
   if (parseInt(lightness) > 70) {
+    document.getElementById("about").style.color = "black";
+    document.getElementById("shortkeys").style.color = "black";
     document.getElementById("startStop").style.color = "black";
     document.getElementById("reset").style.color = "black";
     document.getElementById("timer").style.color = "black";
@@ -41,6 +43,8 @@ input.addEventListener("input", function() {
     document.getElementById("1color").style.color = "black";
     document.getElementById("wordLight").style.color = "black";
   } else {
+    document.getElementById("about").style.color = "white";
+    document.getElementById("shortkeys").style.color = "white";
     document.getElementById("startStop").style.color = "white";
     document.getElementById("reset").style.color = "white";
     document.getElementById("timer").style.color = "white";
@@ -56,7 +60,8 @@ function stopWatch() {
 
   if (seconds == 30) {
     lightness = document.getElementById("Lightness").value.toString() + "%";
-    hueChange = parseInt(hueChange) - 53;
+    hueChange =
+      parseInt(hueChange) - Math.floor(Math.random() * (90 - 40 + 1) + 40);
     bk.style.backgroundColor =
       "hsl(" + hueChange + ", " + saturation + ", " + lightness + ")";
 
@@ -70,7 +75,8 @@ function stopWatch() {
     seconds = 0;
     minutes++;
     lightness = document.getElementById("Lightness").value.toString() + "%";
-    hueChange = parseInt(hueChange) - 53;
+    hueChange =
+      parseInt(hueChange) - Math.floor(Math.random() * (90 - 40 + 1) + 40);
     bk.style.backgroundColor =
       "hsl(" + hueChange + ", " + saturation + ", " + lightness + ")";
     if (document.getElementById("1minute").checked) {
@@ -128,4 +134,14 @@ function reset() {
   hours = 0;
   document.getElementById("timer").innerHTML = "00:00:00";
   document.getElementById("startStop").innerHTML = "Start";
+}
+
+function about() {
+  alert(
+    "This stopwatch was created for anyone to use free of charge. I hope that you enjoy it!"
+  );
+}
+
+function shortkeys() {
+  alert("spacebar = start/stop\nr = reset\nm = mute/unmute");
 }

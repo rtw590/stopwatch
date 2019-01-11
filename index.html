@@ -3,10 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <title>Stopwatch</title>
+
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
 
   <body id="bodyBox">
+    <div class="nav"><button>About</button> <button>Shortkeys</button></div>
+
     <div id="timerBox"><h1 id="timer">00:00:00</h1></div>
 
     <div class="buttons">
@@ -25,7 +28,7 @@
 
     <div class="picker">
       <br />
-      <h2 id="wordLight">Lightness</h2>
+      <h2 id="wordLight">Brightness</h2>
       <br />
       <input
         type="range"
@@ -38,5 +41,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="shortkeys.js"></script>
   </body>
 </html>

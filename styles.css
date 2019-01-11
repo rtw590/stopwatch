@@ -77,3 +77,15 @@ button:active,
 button:focus {
   outline: none;
 }
+
+#about:hover {
+  cursor: pointer;
+  font-weight: 900;
+  outline: none;
+}
+
+#shortkeys:hover {
+  cursor: pointer;
+  font-weight: 900;
+  outline: none;
+}
