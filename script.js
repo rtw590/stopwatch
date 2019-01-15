@@ -33,6 +33,7 @@ input.addEventListener("input", function() {
   lightness = document.getElementById("Lightness").value.toString() + "%";
   bk.style.backgroundColor =
     "hsl(" + hueChange + ", " + saturation + ", " + lightness + ")";
+  console.log(parseInt(lightness));
   if (parseInt(lightness) > 70) {
     document.getElementById("about").style.color = "black";
     document.getElementById("shortkeys").style.color = "black";
