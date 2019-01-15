@@ -12,6 +12,33 @@
   </head>
 
   <body id="bodyBox">
+    <div class="centered" id="aboutBox" style="display:none">
+      <p style="font-weight: 700;">About</p>
+      <p>This stopwatch was created to be used for free and is open source</p>
+      <p>I hope that you find it useful!</p>
+      <p
+        style="padding-top: 15px; font-weight: 700; color:rgb(54, 54, 253)"
+        id="closeAbout"
+      >
+        Close
+      </p>
+    </div>
+    <div class="centered" id="shortkeysBox" style="display:none">
+      <p style="font-weight: 700;">Shortkeys</p>
+      <p>Spacebar: Start/Stop</p>
+      <p>R: Reset</p>
+      <p>M: Mute/Unmute</p>
+      <p style="padding-top: 10px; font-weight: 700;">
+        *If the shortkey is not working properly, click an empty space on the
+        webpage and try again.
+      </p>
+      <p
+        style="padding-top: 15px; font-weight: 700; color:rgb(54, 54, 253)"
+        id="closeShortkeys"
+      >
+        Close
+      </p>
+    </div>
     <div class="nav">
       <button id="about">About</button>
       <button id="shortkeys">Shortkeys</button>
@@ -49,5 +76,6 @@
 
     <script src="script.js"></script>
     <script src="shortkeys.js"></script>
+    <script src="modals.js"></script>
   </body>
 </html>

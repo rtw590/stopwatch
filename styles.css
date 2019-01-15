@@ -101,3 +101,26 @@ button:focus {
     text-shadow: 10px 10px 3px rgba(0, 0, 0, 0.3);
   }
 }
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 25px;
+  border-radius: 10px;
+  border: 2px solid #b6b6b6;
+  box-shadow: 0px 0px 15px rgb(51, 51, 51);
+  background-color: rgb(243, 243, 243);
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+#closeAbout:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#closeShortkeys:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
