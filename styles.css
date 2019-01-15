@@ -89,3 +89,15 @@ button:focus {
   font-weight: 900;
   outline: none;
 }
+
+@media (max-width: 575px) {
+  h1 {
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (min-width: 575px) {
+  h1 {
+    text-shadow: 10px 10px 3px rgba(0, 0, 0, 0.3);
+  }
+}
